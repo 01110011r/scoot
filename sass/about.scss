@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import './full-houm/fonts';
+body {
+    font-family: 'Lexend Deca';
+    overflow-x: hidden;
+}
+
+$btn-color:#FCB72B;
+$main-color: #F2F2F2;
+$heading-font: 'Space Mono';
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@mixin for-tablet {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin for-mobile {
+    @media screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+@import './full-about/all-about';

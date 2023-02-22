@@ -1,0 +1,90 @@
+footer {
+    background: #495567;
+}
+
+.sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 102px 0;
+    @include for-tablet() {
+        flex-direction: column;
+        text-align: center;
+        row-gap: 40px;
+        padding: 62px 0;
+    }
+    &__h2 {
+        font-family: $heading-font;
+        color: $main-color;
+        max-width: 415px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: -2.14286px;
+        @include for-mobile() {
+            font-size: 32px;
+        }
+    }
+    &__icons {
+        display: flex;
+        column-gap: 18px;
+        &-child {
+            @include for-tablet() {
+                width: 130px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+.bg-footer {
+    background: #333A44;
+}
+
+.end {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 33px 0;
+    @include for-mobile() {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.finish {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @include for-mobile() {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 85px;
+    }
+    &__ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 32px;
+        @include for-mobile() {
+            flex-direction: column;
+        }
+        &-li {
+            &-a {
+                text-decoration: none;
+                color: #939CAA;
+                text-transform: capitalize;
+            }
+        }
+        &-li:hover>a {
+            color: $btn-color;
+        }
+    }
+    &__logos {
+        display: flex;
+        column-gap: 32px;
+        a:hover>svg>path {
+            fill: $main-color;
+        }
+    }
+}

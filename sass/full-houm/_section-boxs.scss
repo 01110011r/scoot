@@ -1,0 +1,87 @@
+.boxs {
+    display: flex;
+    flex-direction: column;
+    padding-top: 147px;
+    padding-bottom: 178px;
+    row-gap: 150px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include for-tablet() {
+        flex-direction: column;
+        text-align: center;
+        row-gap: 56px;
+    }
+    &__text {
+        max-width: 445px;
+        @include for-tablet() {
+            order: 2;
+        }
+        &-h2 {
+            font-family: $heading-font;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 48px;
+            letter-spacing: -2.14286px;
+            color: #495567;
+            @include for-mobile() {
+                font-size: 32px;
+            }
+        }
+        &-p {
+            padding: 24px 0 40px 0;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 25px;
+            color: #939CAA;
+        }
+        &-btn {
+            width: 180px;
+            height: 53px;
+            color: $main-color;
+            background: $btn-color;
+            border: 3px solid $btn-color;
+        }
+        &-btn:hover {
+            background: none;
+            color: $btn-color;
+        }
+    }
+    &__img {
+        @include for-tablet() {
+            order: 1;
+        }
+        @include for-mobile() {
+            max-width: 311px;
+        }
+    }
+    &__svg1 {
+        position: absolute;
+        right: -15px;
+        top: 300px;
+        @include for-mobile() {
+            max-width: 300px;
+            top: 230px;
+        }
+    }
+    &__svg2 {
+        position: absolute;
+        top: 0;
+        @include for-mobile() {
+            max-width: 300px;
+            left: -12px;
+        }
+    }
+    &__svg3 {
+        position: absolute;
+        top: 20px;
+        right: -12px;
+        @include for-mobile() {
+            max-width: 300px;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+nav {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 21px 0;
+    width: 100%;
+    column-gap: 58px;
+    &__input {
+        display: none;
+    }
+    &__label {
+        display: none;
+        @include for-mobile() {
+            display: inline-block;
+            padding-left: 18px;
+        }
+    }
+    &__logo {
+        cursor: pointer;
+        @include for-mobile() {
+            width: 75%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+.menu {
+    transition: 0.5s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include for-mobile() {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 64px 0 24px 32px;
+        height: 85%;
+        max-width: 300px;
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        left: -100%;
+        background: #333A44;
+    }
+    &__ul {
+        display: flex;
+        list-style: none;
+        column-gap: 32px;
+        @include for-mobile() {
+            flex-direction: column;
+            row-gap: 24px;
+        }
+        &-li {
+            &-link {
+                text-decoration: none;
+                text-transform: capitalize;
+                color: #939CAA;
+            }
+            &-link:hover {
+                color: $btn-color;
+            }
+        }
+    }
+    &__btn {
+        width: 180px;
+        height: 53px;
+        text-transform: capitalize;
+        color: $main-color;
+        background: $btn-color;
+        border: 3px solid $btn-color;
+        cursor: pointer;
+    }
+    &__btn:hover {
+        background: $main-color;
+        color: $btn-color;
+    }
+}
+
+.nav__input:checked~.menu {
+    left: 0;
+}
+
+// nav about tugadi
+.nav-after-bg {
+    background: url(../images/coreersbg.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    margin-top: 60px;
+    @include for-mobile() {
+        background-position: center;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min--moz-device-pixel-ratio:2),
+only screen and (-o-min-device-pixel-ratio:2/1),
+only screen and (min-device-pixel-ratio:2),
+only screen and (min-resolution:192dpi),
+only screen and (min-resolution:2dppx) {
+    .nav-after-bg {
+        background: url(../images/coreersbg@2x.jpg);
+    }
+}
+
+.nav-after {
+    padding: 72px 0;
+    @include for-mobile() {
+        display: flex;
+        justify-content: center;
+    }
+    &__h1 {
+        font-weight: 700;
+        font-size: 56px;
+        text-transform: capitalize;
+        font-family: $heading-font;
+        color: $main-color;
+        @include for-mobile() {
+            font-size: 40px;
+        }
+    }
+}
